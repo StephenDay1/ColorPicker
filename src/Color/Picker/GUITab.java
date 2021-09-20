@@ -23,87 +23,21 @@ public class GUITab extends JFrame {
     private final JButton startButton = new JButton("Pick Color");
     private final JButton copyButton = new JButton("Copy Color");
 
-    private Action initializeBackgroundWindowsAction = new Action() {
-        @Override
-        public Object getValue(String key) {
-            return null;
-        }
-
-        @Override
-        public void putValue(String key, Object value) {
-
-        }
-
-        @Override
-        public void setEnabled(boolean b) {
-
-        }
-
-        @Override
-        public boolean isEnabled() {
-            return false;
-        }
-
-        @Override
-        public void addPropertyChangeListener(PropertyChangeListener listener) {
-
-        }
-
-        @Override
-        public void removePropertyChangeListener(PropertyChangeListener listener) {
-
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            ColorPicker.initializeBackgroundWindows();
-        }
-    };
-    private Action copyRGB = new Action() {
-        @Override
-        public Object getValue(String key) {
-            return null;
-        }
-
-        @Override
-        public void putValue(String key, Object value) {
-
-        }
-
-        @Override
-        public void setEnabled(boolean b) {
-
-        }
-
-        @Override
-        public boolean isEnabled() {
-            return false;
-        }
-
-        @Override
-        public void addPropertyChangeListener(PropertyChangeListener listener) {
-
-        }
-
-        @Override
-        public void removePropertyChangeListener(PropertyChangeListener listener) {
-
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            StringSelection selection = new StringSelection(
-                    String.format(
-                            "(%d, %d, %d)",
-                            color.getRed(),
-                            color.getGreen(),
-                            color.getBlue()
-                    )
-            );
-            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-            clipboard.setContents(selection, selection);
-        }
-    };
+    private BasicAction initializeBackgroundWindowsAction = new BasicAction(() -> {
+        ColorPicker.initializeBackgroundWindows();
+    });
+    private BasicAction copyRGB = new BasicAction(() -> {
+        StringSelection selection = new StringSelection(
+                String.format(
+                        "(%d, %d, %d)",
+                        color.getRed(),
+                        color.getGreen(),
+                        color.getBlue()
+                )
+        );
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(selection, selection);
+    });
 
     public GUITab() {
         // Initializing Window
