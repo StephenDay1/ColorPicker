@@ -1,4 +1,4 @@
-package ColorPicker;
+package Color.Picker;
 
 import java.awt.*;
 
