@@ -72,41 +72,48 @@ public class GUITab extends JFrame {
         this.setResizable(false);
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         this.setAlwaysOnTop(true);
+        this.setLayout(new GridLayout(2,1));
 
         // colorPanel
-//        this.colorPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
         this.colorPanel.setBackground(color);
-        this.colorPanel.setSize(300, 20);
+        this.colorPanel.setBorder(BorderFactory.createLineBorder(new Color(0), 2, true));
+        this.colorPanel.setFocusable(false);
+//        this.colorPanel.setSize(300, 20);
 
         // dataPanel
-//        this.dataPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         this.dataPanel.setLayout(new GridLayout(3,1));
         this.dataPanel.setBackground(new Color(255,255,255));
-        this.dataPanel.setSize(300, 200);
+//        this.dataPanel.setFocusable(false);
+//        this.dataPanel.setSize(300, 100);
 
         // rgbLabel
         this.rgbLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        this.rgbLabel.setFocusable(false);
 //        this.rgbLabel.setSize(250,10);
 
         // startButton
         this.startButton.setBackground(new Color(220,220,220));
         this.startButton.addActionListener(initializeBackgroundWindowsAction);
+        this.startButton.setFocusable(false);
 //        this.startButton.setSize(250,10);
 
         // copyButton
         this.copyButton.setBackground(new Color(220,220,220));
         this.copyButton.addActionListener(copyRGB);
+        this.copyButton.setFocusable(false);
 //        this.copyButton.setSize(250,10);
 
         // colorModeButton
         this.colorModeButton.setBackground(new Color(220,220,220));
         this.colorModeButton.addActionListener(toggleColorMode);
+        this.colorModeButton.setFocusable(false);
 
         this.dataPanel.add(rgbLabel);
         this.dataPanel.add(startButton);
         this.dataPanel.add(copyButton);
         this.dataPanel.add(colorModeButton);
 
+//        this.add(this.colorPanel);
         this.add(this.dataPanel);
         this.add(this.colorPanel);
     }
@@ -128,7 +135,5 @@ public class GUITab extends JFrame {
                 ColorPicker.toHex(color.getBlue())
             )
         );
-        this.dataPanel.updateUI();
-        this.colorPanel.updateUI();
     }
 }
