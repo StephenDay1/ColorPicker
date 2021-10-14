@@ -43,4 +43,9 @@ public class ColorPicker {
     private static double getMouseY() {
         return MouseInfo.getPointerInfo().getLocation().getY();
     }
+
+    public static String toHex(int num) {
+        String str = Integer.toHexString(num).toString();
+        return (str.length() < 2) ? "0" + str : str;
+    }
 }
