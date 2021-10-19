@@ -23,8 +23,6 @@ public class BackgroundWindow extends JFrame implements MouseListener {
         ColorPicker.closeBackgroundWindows();
         if (mouseEvent.getButton() == 1) {
             ColorPicker.getColor();
-        } else {
-            ColorPicker.closeBackgroundWindows();
         }
     }
 
