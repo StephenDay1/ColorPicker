@@ -65,6 +65,7 @@ public class GUITab extends JFrame {
         // Initializing Window
         super("Color Picker");
         this.frameInit();
+        this.setIconImage(new ImageIcon("src/Color/Picker/resources/icon.png").getImage());
         this.setVisible(true);
         this.setSize(250,200);
         this.setLocation(-6,0); // (0,0 doesn't actually put it in the corner)

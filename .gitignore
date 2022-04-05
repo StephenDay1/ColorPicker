@@ -24,3 +24,9 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+out/production/ColorPicker/META-INF/MANIFEST.MF
+out/production/ColorPicker/Color/Picker/resources/icon.png
+out/production/ColorPicker/Color/Picker/resources/icon.ico
+launch4j/launch4j config/config.xml
+launch4j/Color Picker.exe
+src/META-INF/MANIFEST.MF
